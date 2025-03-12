@@ -1,9 +1,143 @@
+/* App.css */
+
+/* Reset default margins and ensure full height */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Center all content within the viewport */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-  font-family: 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  min-height: 100vh;
+  width: 100%;           /* Ensures full width */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;  /* Stretches children (like Navbar) to full width */
+}
+
+/* Navbar styles (if present) */
+.navbar {
+  background-color: #f8f8f8; /* Your background color */
+  padding: 10px;
+  position: fixed; /* Keeps it at the top */
+  top: 0;
+  left: 0;        /* Aligns to the left edge */
+  right: 0;       /* Aligns to the right edge */
+  width: 100%;    /* Ensures full width */
+  z-index: 1000;  /* Keeps it above other content */
+  box-sizing: border-box; /* Includes padding in width */
+  margin: 0;      /* Removes any unwanted margins */
+  
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-size: 1.2em;
+  font-weight: 900;
+  gap: 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar a:hover {
+  color: #007bff;
+}
+
+/* Center content on Game and Contact pages */
+.game, .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 60px; /* Offset for fixed navbar, adjust if not needed */
+}
+
+/* Contact page layout */
+.contact {
+  flex-direction: row;
+  gap: 40px; /* Space between form and submitted data */
+}
+
+/* Form styling */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 400px; /* Fixed width for consistency */
+}
+
+.contact form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact form input,
+.contact form textarea,
+.contact form select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.contact form textarea {
+  height: 100px;
+}
+
+.contact form .error {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+/* Submitted data styling */
+.contact .submitted-data {
+  width: 400px; /* Matches form width */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.contact .submitted-data h2 {
+  margin-top: 0;
+  font-size: 1.5em;
+  color: #333;
+  border-bottom: 2px solid #007bff; /* Decorative underline */
+  padding-bottom: 5px;
+}
+
+.contact .submitted-data p {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #555;
+}
+
+.contact .submitted-data p strong {
+  color: #333; /* Darker color for labels */
+}
+
+/* Game page styles (minimal, assuming a tic-tac-toe game) */
+.game {
+  flex-direction: row;
+}
+
+.game-board {
+  margin: 20px;
 }
 
 .board-row {
@@ -20,26 +154,9 @@
   font-weight: 700;
 }
 
-.status {
-  margin: 2rem 0;
-  font-size: 2.5rem;
-  font-weight: 700;
-}
 
-.game {
-  display: flex;
-  margin-left: 20px;
-  text-align: left;
-}
-
-.game-info {
-  margin-top: 8rem;
-  margin-left: 4rem;
-}
-
-header {
-  display: inline-block;
-  margin-bottom: 2rem;
-  font-size: 1.5rem;
+.about_h {
+  margin-top: 60px;
+  margin-bottom: 20px;
   font-weight: 700;
 }
